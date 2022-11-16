@@ -36,21 +36,5 @@ public class SolutionsEntity {
 		this.solnid = solnid;
 	}
 
-	public String getTopic() {
-		return topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-	}
-
-	public String getWays() {
-		return ways;
-	}
-
-	public void setWays(String ways) {
-		this.ways = ways;
-	}
-
 	
 }
