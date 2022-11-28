@@ -15,22 +15,22 @@ public class SolutionsService {
 	@Autowired
 	SolutionsRepository solnrepo;
 	
-	//C - Create or Insert a student record
+	//C - Create or Insert a solution record
 	public SolutionsEntity insertSolution(SolutionsEntity solution) {
 		return solnrepo.save(solution);
 	}
 	
-	//R - Read all record from the table named tbl_student
+	//R - Read all record from the table named tbl_solution
 	public List<SolutionsEntity> getAllSolutions(){
 		return solnrepo.findAll();
 	}
-	//U - Update a student record
+	//U - Update a solution record
 	public SolutionsEntity putSolution(int solnid, SolutionsEntity newSolutionDetails) throws Exception {
 		SolutionsEntity solution = new SolutionsEntity();
 		
 		try {
 			//steps in updating
-			//Step 1 - search the id number of the student
+			//Step 1 - search the id number of the solution
 			solution = solnrepo.findById(solnid).get();
 			
 			//Step 2 - update the record
@@ -43,7 +43,7 @@ public class SolutionsService {
 			throw new Exception("ID Number " + solnid + " does not exist!");
 		}
 	}
-	//D - Delete a student record
+	//D - Delete a solution record
 	public String deleteSolution(int solnid) {
 		String msg;
 		if(solnrepo.findById(solnid) != null) { //step 1 - find the reocrd
