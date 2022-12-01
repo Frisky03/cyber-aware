@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background-color: #90adcd;
+}
+
+.solutions {
+    position: relative;
+    margin: 1rem;
+    text-align: left;
+    left: 50px;
+    color: #0d3a5c;
+}
+
+#heading1{
+  font-size: 3rem;
+  font-family:Arial, Helvetica, sans-serif;
+}
+#headings{
+  font-size: 2rem;
+  font-family:Arial, Helvetica, sans-serif;
+}
