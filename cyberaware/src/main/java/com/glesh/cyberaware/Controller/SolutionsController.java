@@ -32,6 +32,11 @@ public class SolutionsController {
 	public List<SolutionsEntity> getAllSolutions(){
 		return solnserv.getAllSolutions();
 	}
+	//Read all records
+	@GetMapping("/getAllSolutions/{topic}")
+	public List<SolutionsEntity> getAllSolutionsByName(@PathVariable String topic){
+		return solnserv.getAllSolutionsByName(topic);
+	}
 	//Update a record
 	@PutMapping("/putSolution")
 	public SolutionsEntity putSolution(@RequestParam int solnid, @RequestBody SolutionsEntity newSolutionDetails) throws Exception{
@@ -42,4 +47,5 @@ public class SolutionsController {
 	public String deleteSolution(@PathVariable int solnid) {
 		return solnserv.deleteSolution(solnid);
 	}
+	
 }

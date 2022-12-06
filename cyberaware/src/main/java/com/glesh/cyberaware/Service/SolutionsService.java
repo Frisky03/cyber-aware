@@ -24,6 +24,9 @@ public class SolutionsService {
 	public List<SolutionsEntity> getAllSolutions(){
 		return solnrepo.findAll();
 	}
+	public List<SolutionsEntity> getAllSolutionsByName(String topic){
+		return solnrepo.findByTopic(topic);
+	}
 	//U - Update a solution record
 	public SolutionsEntity putSolution(int solnid, SolutionsEntity newSolutionDetails) throws Exception {
 		SolutionsEntity solution = new SolutionsEntity();
