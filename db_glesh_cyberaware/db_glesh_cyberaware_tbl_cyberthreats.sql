@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `db_glesh_cyberaware` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_glesh_cyberaware`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
--- Host: localhost    Database: db_glesh_cyberaware
+-- Host: 127.0.0.1    Database: db_glesh_cyberaware
 -- ------------------------------------------------------
 -- Server version	8.0.30
 
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-23  2:04:27
+-- Dump completed on 2022-12-06 14:53:35
