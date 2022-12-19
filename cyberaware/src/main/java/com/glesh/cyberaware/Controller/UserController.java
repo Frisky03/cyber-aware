@@ -3,6 +3,7 @@ package com.glesh.cyberaware.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,34 +14,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.glesh.cyberaware.Entity.LoginUserEntity;
-import com.glesh.cyberaware.Service.LoginService;
+import com.glesh.cyberaware.Entity.UserEntity;
+import com.glesh.cyberaware.Service.UserService;
 
+@CrossOrigin(origins = {"http://localhost:3000"})
 @RestController
-@RequestMapping("/user")
-
-public class LoginController {
-	
+@RequestMapping("/users")
+public class UserController {
 	@Autowired
-	LoginService lserv;
+	UserService userv;
 	
+	//Create or Insert a student record
 	@PostMapping("/postUser")
-	public LoginUserEntity insertUser(@RequestBody LoginUserEntity user) {
-		return lserv.insertUser(user);
+	public UserEntity insertUser(@RequestBody UserEntity user) {
+		return userv.insertUser(user);
 	}
-	
-	@GetMapping("/getAllId")
-	public List<LoginUserEntity> getAllId(){
-		return lserv.getAllId();
+	//Read all records
+	@GetMapping("/getAllUsers")
+	public List<UserEntity> getAllUsers(){
+		return userv.getAllUsers();
 	}
-	
-	@PutMapping("/putId")
-	public LoginUserEntity putId(@RequestParam int id, @RequestBody LoginUserEntity newUserDetails) throws Exception{
-		return lserv.putId(id,newUserDetails);
+	//Update a record
+	@PutMapping("/putUser")
+	public UserEntity putUser(@RequestParam int id, @RequestBody UserEntity newUserDetails) throws Exception{
+		return userv.putUser(id, newUserDetails);
 	}
-	
+	//Delete a record
 	@DeleteMapping("/deleteUser/{id}")
 	public String deleteUser(@PathVariable int id) {
-		return lserv.deleteUser(id);
+		return userv.deleteUser(id);
 	}
+	
 }

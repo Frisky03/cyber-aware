@@ -3,8 +3,9 @@ package com.glesh.cyberaware.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.glesh.cyberaware.Entity.LoginUserEntity;
+import com.glesh.cyberaware.Entity.AdminEntity;
 
 @Repository
-public interface LoginRepository extends JpaRepository<LoginUserEntity, Integer >{	
+public interface AdminRepository extends JpaRepository<AdminEntity, Integer>{
+
 }
