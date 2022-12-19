@@ -16,29 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_users`
+-- Table structure for table `tbl_reports`
 --
 
-DROP TABLE IF EXISTS `tbl_users`;
+DROP TABLE IF EXISTS `tbl_reports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_users` (
+CREATE TABLE `tbl_reports` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `password` varchar(255) DEFAULT NULL,
-  `type` varchar(255) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `phone` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_users`
+-- Dumping data for table `tbl_reports`
 --
 
-LOCK TABLES `tbl_users` WRITE;
-/*!40000 ALTER TABLE `tbl_users` DISABLE KEYS */;
-INSERT INTO `tbl_users` VALUES (1,'qwerty','C','novatairr'),(2,'zayn123','C','zaynmalik'),(3,'bocchi','C','guitarhero');
-/*!40000 ALTER TABLE `tbl_users` ENABLE KEYS */;
+LOCK TABLES `tbl_reports` WRITE;
+/*!40000 ALTER TABLE `tbl_reports` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_reports` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-19 15:28:34
+-- Dump completed on 2022-12-19 15:28:35

@@ -16,28 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tbl_users_role`
+-- Table structure for table `tbl_clients`
 --
 
-DROP TABLE IF EXISTS `tbl_users_role`;
+DROP TABLE IF EXISTS `tbl_clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_users_role` (
-  `login_user_entity_id` int NOT NULL,
-  `role_id` int NOT NULL,
-  PRIMARY KEY (`login_user_entity_id`,`role_id`),
-  UNIQUE KEY `UK_nu6y07b9o2kajwj1heagbfdwu` (`role_id`),
-  CONSTRAINT `FKh8776jhhx9rp82alcku0cgguv` FOREIGN KEY (`login_user_entity_id`) REFERENCES `tbl_users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `tbl_clients` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `birthday` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKfofebfwi30t19arataxvrsdnr` (`user_id`),
+  CONSTRAINT `FKfofebfwi30t19arataxvrsdnr` FOREIGN KEY (`user_id`) REFERENCES `tbl_users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_users_role`
+-- Dumping data for table `tbl_clients`
 --
 
-LOCK TABLES `tbl_users_role` WRITE;
-/*!40000 ALTER TABLE `tbl_users_role` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_users_role` ENABLE KEYS */;
+LOCK TABLES `tbl_clients` WRITE;
+/*!40000 ALTER TABLE `tbl_clients` DISABLE KEYS */;
+INSERT INTO `tbl_clients` VALUES (1,'Jim Bryan','Santana','Tinaa-an, City of Naga, Cebu','March 25, 2002','santana.jimbryan@gmail.com',1),(2,NULL,NULL,'Zayn','September 1, 1995','zayn@gmail.com',2),(3,'Hitori','Gotoh','Anime Country','February 21, 2004','hitorigotoh@gmail.com',3);
+/*!40000 ALTER TABLE `tbl_clients` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-06 14:53:35
+-- Dump completed on 2022-12-19 15:28:35
