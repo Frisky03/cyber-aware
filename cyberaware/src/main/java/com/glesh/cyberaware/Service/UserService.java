@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.glesh.cyberaware.Entity.SolutionsEntity;
 import com.glesh.cyberaware.Entity.UserEntity;
 import com.glesh.cyberaware.Repository.UserRepository;
 
@@ -24,7 +25,9 @@ public class UserService {
 		public List<UserEntity> getAllUsers(){
 			return urepo.findAll();
 		}
-		
+		public List<UserEntity> getAllUsersByUsername(String username){
+			return urepo.findByUsername(username);
+		}
 		//U - Update a solution record
 		public UserEntity putUser(int id, UserEntity newUserDetails) throws Exception {
 			UserEntity user = new UserEntity();

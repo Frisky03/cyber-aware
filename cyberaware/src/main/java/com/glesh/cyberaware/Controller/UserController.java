@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.glesh.cyberaware.Entity.SolutionsEntity;
 import com.glesh.cyberaware.Entity.UserEntity;
 import com.glesh.cyberaware.Service.UserService;
 
@@ -29,10 +30,18 @@ public class UserController {
 	public UserEntity insertUser(@RequestBody UserEntity user) {
 		return userv.insertUser(user);
 	}
+	@PostMapping("/login")
+	public UserEntity loginUser(@RequestBody UserEntity user) {
+		return userv.insertUser(user);
+	}
 	//Read all records
 	@GetMapping("/getAllUsers")
 	public List<UserEntity> getAllUsers(){
 		return userv.getAllUsers();
+	}
+	@GetMapping("/getByUsername")
+	public List<UserEntity> getByUsername(@RequestParam String username){
+		return userv.getAllUsersByUsername(username);
 	}
 	//Update a record
 	@PutMapping("/putUser")
